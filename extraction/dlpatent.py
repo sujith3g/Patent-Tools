@@ -24,7 +24,8 @@ def bib_urls():
 
 	for link in BeautifulSoup(response, parseOnlyThese=SoupStrainer('a')):
 		if link.has_key('href') and link['href'].find('.zip') != -1:
-			urls.apend(link['href'])
+			urls.append(link['href'])
+        return urls
 
 
 def download_next_bib(n=1):
